@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishant Kumar - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="icons/Formal.jpg">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body class="antialiased">
+
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header / Navbar -->
+    <header class="fixed w-full z-50">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center glass-card mt-4">
+            <a href="#" class="text-2xl font-bold gradient-text">NK</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#journey" class="nav-link">Journey</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <a href="https://github.com/nishantr846" target="_blank"
+                class="hidden md:inline-block px-4 py-2 border border-sky-400 text-sky-400 rounded-lg hover:bg-sky-400 hover:text-gray-900 transition-colors">GitHub</a>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none text-white">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/80 backdrop-blur-sm">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
+            <a href="#journey" class="block py-2 px-4 text-sm hover:bg-gray-700">Journey</a>
+            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-700">Skills</a>
+            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-700">Projects</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 relative z-10">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 animate-fade-in-down">
+                    Hi, I'm <span class="gradient-text">Nishant Kumar</span>
+                </h1>
+                <p class="text-2xl md:text-3xl text-slate-300 font-mono">
+                    I'm a <span id="typing-effect" class="text-sky-400"></span><span class="cursor"></span>
+                </p>
+                <div class="mt-8 flex justify-center space-x-6">
+                    <a href="https://github.com/Nishantr846" target="_blank" class="text-slate-400 social-icon"><i
+                            data-feather="github" class="w-8 h-8"></i></a>
+                    <a href="https://www.linkedin.com/in/nishantr846/" target="_blank"
+                        class="text-slate-400 social-icon"><i data-feather="linkedin" class="w-8 h-8"></i></a>
+                    <a href="https://leetcode.com/u/nishantr846/" target="_blank" class="text-slate-400 social-icon"
+                        title="LeetCode"><i data-feather="code" class="w-8 h-8"></i></a>
+                </div>
+                <div class="mt-12">
+                    <a href="#projects" id="view-work-btn"
+                        class="px-8 py-3 bg-sky-500 text-white font-semibold rounded-lg hover:bg-sky-600 transition-all duration-300 shadow-lg shadow-sky-500/30 hover:shadow-sky-400/40 transform hover:scale-105">View
+                        My Work</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 scroll-reveal">
+            <h2 class="section-heading gradient-text">About Me</h2>
+            <div class="grid md:grid-cols-5 gap-10 items-center">
+                <div class="md:col-span-2">
+                    <div class="glass-card p-6">
+                        <img src="icons/Formal.jpg" alt="Nishant Kumar" class="rounded-lg w-full">
+                    </div>
+                </div>
+                <div class="md:col-span-3">
+                    <div id="bio-text">
+                        <p class="text-slate-300 text-lg leading-relaxed mb-4">
+                            Hi, I’m Nishant Kumar, a Computer Science undergraduate at KIIT, Bhubaneswar, specializing
+                            in AI and ML. I’m passionate
+                            about transforming ideas into impactful digital solutions—ranging from interactive web apps
+                            to full-stack ML systems,
+                            with a strong focus on Generative AI and LLM orchestration.
+                        </p>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-4">
+                            As an AI/ML Intern at Kokku Proptech, I engineered a complete data-to-model pipeline and
+                            deployed a scalable chatbot by
+                            fine-tuning TinyLlama-1.1B using LoRA. My personal projects reflect the same drive for
+                            innovation:
+                        </p>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-4">
+                            <b>RESUMENTOR</b>, an AI-powered career assistant that automates resume analysis and custom
+                            cover
+                            letter generation using
+                            LangChain and the Google Gemini API. I also created
+                        </p>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-4">
+                            <b>GreenGLOW</b>, a plant care and disease detection platform that uses a CNN model trained
+                            on over
+                            87,000 images to diagnose
+                            plant diseases with 97% accuracy. To strengthen my grasp of fundamentals, I also built
+                        </p>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-4">
+                            <b>Sortify</b>, a web-based sorting algorithm visualizer that helps users understand
+                            algorithm
+                            behavior through real-time
+                            animations.
+                        </p>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-4">
+                            I work with Python, C++, Java, and tools like TensorFlow, Flask, LangChain, and
+                            Transformers. I'm currently exploring
+                            RAG, LLM agents, and multi-agent systems. A firm believer in creativity and collaboration,
+                            I’ve also led initiatives as
+                            an artist in the KIIT Art Society.
+                        </p>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-4">
+                            Thanks for stopping by—I'm excited to keep growing, building, and collaborating!
+                        </p>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <a href="https://drive.google.com/file/d/1dIwofMARhxfTzGgyS093PLVDyadAPhKO/view?usp=sharing"
+                            target="_blank"
+                            class="inline-block px-6 py-3 border border-sky-400 text-sky-400 rounded-lg hover:bg-sky-400 hover:text-gray-900 transition-colors">
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section id="journey" class="py-24">
+            <h2 class="section-heading gradient-text scroll-reveal">My Journey</h2>
+            <div class="timeline-container">
+                <div class="timeline-item left scroll-reveal">
+                    <div class="timeline-content glass-card">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-100">AI/ML Intern</h3>
+                                <p class="text-sky-400 font-medium text-sm">Kokku Proptech Private Limited</p>
+                            </div>
+                            <p class="font-mono text-slate-400 text-sm">2025</p>
+                        </div>
+                        <ul class="list-disc list-inside text-slate-300 text-sm space-y-2">
+                            <li>Engineered a complete data-to-model pipeline by processing a 1500+ page PDF and
+                                fine-tuning a TinyLlama-1.1B model with LoRA.</li>
+                            <li>Designed and deployed a full-stack, scalable chatbot using a Flask-based backend and a
+                                vLLM inference server.</li>
+                            <li>Implemented an "LLM-as-a-Judge" framework for robust model validation.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right scroll-reveal">
+                    <div class="timeline-content glass-card">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-100">B. Tech - Computer Science</h3>
+                                <p class="text-sky-400 font-medium text-sm">Kalinga Institute of Industrial Technology
+                                </p>
+                            </div>
+                            <p class="font-mono text-slate-400 text-sm">2022-Present</p>
+                        </div>
+                        <p class="text-slate-300">CGPA – 8.00</p>
+                    </div>
+                </div>
+                <div class="timeline-item left scroll-reveal">
+                    <div class="timeline-content glass-card">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-100">Class 12th (PCM)</h3>
+                                <p class="text-sky-400 font-medium text-sm">Sree Ayyappa Public School</p>
+                            </div>
+                            <p class="font-mono text-slate-400 text-sm">2022</p>
+                        </div>
+                        <p class="text-slate-300">Percentage - 75.1%</p>
+                    </div>
+                </div>
+                <div class="timeline-item right scroll-reveal">
+                    <div class="timeline-content glass-card">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-100">Class 10th</h3>
+                                <p class="text-sky-400 font-medium text-sm">Delhi Public School, Chas</p>
+                            </div>
+                            <p class="font-mono text-slate-400 text-sm">2020</p>
+                        </div>
+                        <p class="text-slate-300">Percentage - 85.4%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 scroll-reveal">
+            <h2 class="section-heading gradient-text">My Tech Stack</h2>
+            <div class="glass-card p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-slate-100 mb-4">Languages</h3>
+                        <div class="flex flex-wrap justify-center">
+                            <span class="skill-badge">Python</span><span class="skill-badge">C/C++</span><span
+                                class="skill-badge">Java</span><span class="skill-badge">JavaScript</span><span
+                                class="skill-badge">SQL</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-slate-100 mb-4">Frontend Development</h3>
+                        <div class="flex flex-wrap justify-center">
+                            <span class="skill-badge">HTML</span><span class="skill-badge">CSS</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-slate-100 mb-4">Backend & Databases</h3>
+                        <div class="flex flex-wrap justify-center">
+                            <span class="skill-badge">Flask</span><span class="skill-badge">MySQL</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-slate-100 mb-4">AI/ML Libraries</h3>
+                        <div class="flex flex-wrap justify-center">
+                            <span class="skill-badge">TensorFlow</span><span
+                                class="skill-badge">Scikit-learn</span><span class="skill-badge">Pandas</span><span
+                                class="skill-badge">NumPy</span><span class="skill-badge">OpenCV</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-slate-100 mb-4">Generative AI</h3>
+                        <div class="flex flex-wrap justify-center">
+                            <span class="skill-badge">LangChain</span><span class="skill-badge">LangGraph</span><span
+                                class="skill-badge">LlamaIndex</span><span class="skill-badge">LLMs</span><span
+                                class="skill-badge">RAG</span><span class="skill-badge">NLP</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold text-slate-100 mb-4">Tools & Professional Skills</h3>
+                        <div class="flex flex-wrap justify-center">
+                            <span class="skill-badge">Git & GitHub</span><span class="skill-badge">Docker</span><span
+                                class="skill-badge">Vercel</span><span class="skill-badge">AWS</span><span
+                                class="skill-badge">DSA</span><span class="skill-badge">Teamwork</span><span
+                                class="skill-badge">Leadership</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 scroll-reveal">
+            <h2 class="section-heading gradient-text">Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Projects will be dynamically populated here -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 text-center scroll-reveal">
+            <h2 class="section-heading gradient-text">Get In Touch</h2>
+            <p class="max-w-2xl mx-auto text-lg text-slate-300 mb-8">
+                I'm currently open to new opportunities and collaborations. Feel free to reach out to me through the
+                form below or any of the social platforms.
+            </p>
+
+            <div class="max-w-2xl mx-auto glass-card p-8 text-left">
+                <form action="https://formspree.io/f/mjkoegow" method="POST">
+                    <!-- Name -->
+                    <div class="mb-4">
+                        <label for="name" class="block text-sky-300 mb-2">Name</label>
+                        <input type="text" id="name" name="name" required
+                            class="w-full p-3 rounded-lg text-slate-100 glass-input transition-all duration-300">
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-4">
+                        <label for="email" class="block text-sky-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full p-3 rounded-lg text-slate-100 glass-input transition-all duration-300">
+                    </div>
+
+                    <!-- Subject -->
+                    <div class="mb-4">
+                        <label for="subject" class="block text-sky-300 mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" required
+                            class="w-full p-3 rounded-lg text-slate-100 glass-input transition-all duration-300">
+                    </div>
+
+                    <!-- Message -->
+                    <div class="mb-6">
+                        <label for="message" class="block text-sky-300 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required
+                            class="w-full p-3 rounded-lg text-slate-100 glass-input transition-all duration-300 resize-none"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit"
+                            class="w-full md:w-auto px-8 py-3 bg-sky-500 text-white font-semibold rounded-lg hover:bg-sky-600 transition-all duration-300 shadow-lg shadow-sky-500/30 hover:shadow-sky-400/40 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-800/50">
+        <div class="container mx-auto px-6 text-center text-slate-500">
+            <p>&copy; 2025 Nishant Kumar. Designed & Built with <span class="text-red-500">&hearts;</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js">
+
+    </script>
+</body>
+
+</html>
