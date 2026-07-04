@@ -10,7 +10,7 @@ mobileMenuButton.addEventListener('click', () => {
 
 // Typing Effect
 const typingElement = document.getElementById('typing-effect');
-const words = ["Full Stack Developer", "Data Scientist", "Machine Learning Engineer", "Software Engineer"];
+const words = ["Data Analyst at Deloitte","aspiring AI/ML Engineer"];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
